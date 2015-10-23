@@ -11,6 +11,8 @@ GET /serve
 
 [here](http://stackoverflow.com/questions/21058707/how-to-convert-a-html5-canvas-image-to-a-json-object) is an example of turning a canvas into a json object.
 
+There's a running example at [http://nodesaveserve.herokuapp.com/](http://nodesaveserve.herokuapp.com/).
+
 ## heroku usage
 
 ```bash
