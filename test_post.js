@@ -1,6 +1,14 @@
 var request = require('request-promise')
 
-request.post(
-  'http://nodesaveserve.herokuapp.com/save',
-  'some data'
-).then(console.log).catch(console.log)
+var r = {
+  method: 'POST',
+  uri: 'http://nodesaveserve.herokuapp.com/save',
+  body: {
+    data: 'some cool data'
+  },
+  json: true
+}
+
+request(r)
+  .then(console.log)
+  .catch(console.log)
