@@ -1,5 +1,8 @@
 // set up server
 var app = require('express')()
+var cors = require('cors')
+
+app.use(cors())
 
 var canvasdata
 
@@ -17,5 +20,5 @@ var server = app.listen(process.env.PORT, function () {
   var host = server.address().address
   var port = server.address().port
 
-  console.log('Listening at http://%s:%s', host, port)
+  console.log('CORS-enabled server listening at http://%s:%s', host, port)
 })
