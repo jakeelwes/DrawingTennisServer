@@ -11,6 +11,7 @@ app.get('/serve', function (req, res) {
 
 app.post('/save', function (req, res) {
   canvasdata = req.body
+  console.log('canvasdata', canvasdata)
   res.sendStatus(200)
 })
 
