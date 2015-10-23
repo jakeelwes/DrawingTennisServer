@@ -1,7 +1,9 @@
 // set up server
 var express = require('express')
 var app = express()
+var body_parser = require('body-parser')
 
+app.use(body_parser.json())
 var canvasdata
 
 // set up routes
