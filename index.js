@@ -1,7 +1,8 @@
 // set up server
-var app = require('express')()
+var express = require('express')
 var cors = require('cors')
 
+var app = express()
 app.use(cors())
 
 var canvasdata
