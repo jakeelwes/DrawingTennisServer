@@ -11,13 +11,22 @@ var svgs = []
 // set up routes
 app.get('/serve', function (req, res) {
   res.send(canvasdata)
-  console.log('hihi')
+
+
+  // an object counter
+
 })
 
 app.post('/save', function (req, res) {
   canvasdata = req.body
   console.log('canvasdata', canvasdata)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Origin', 'GET, POST')
+
   res.sendStatus(200)
+
+  // acce
+
 })
 
 app.get('/save/:data', function (req, res) {
