@@ -11,9 +11,7 @@ var svgs = []
 // set up routes
 app.get('/serve', function (req, res) {
   res.send(canvasdata)
-  res.send(canvasdata)
-  res.send(canvasdata)
-
+  console.log('hihi')
 })
 
 app.post('/save', function (req, res) {
