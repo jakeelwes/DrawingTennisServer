@@ -11,6 +11,9 @@ var svgs = []
 // set up routes
 app.get('/serve', function (req, res) {
   res.send(canvasdata)
+  res.send(canvasdata)
+  res.send(canvasdata)
+
 })
 
 app.post('/save', function (req, res) {
@@ -31,5 +34,3 @@ var server = app.listen(process.env.PORT, function () {
 
   console.log('Server listening at http://%s:%s', host, port)
 })
-
-console.log('hi')
