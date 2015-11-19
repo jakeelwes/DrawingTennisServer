@@ -6,6 +6,8 @@ var body_parser = require('body-parser')
 app.use(body_parser.json())
 var canvasdata
 
+var svgs = []
+
 // set up routes
 app.get('/serve', function (req, res) {
   res.send(canvasdata)
@@ -29,3 +31,5 @@ var server = app.listen(process.env.PORT, function () {
 
   console.log('Server listening at http://%s:%s', host, port)
 })
+
+console.log('hi')

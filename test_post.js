@@ -2,7 +2,7 @@ var request = require('request-promise')
 
 var r = {
   method: 'POST',
-  uri: 'http://nodesaveserve.herokuapp.com/save',
+  uri: 'http://drawingtennis.herokuapp.com/save',
   body: {
     data: 'some cool data'
   },
