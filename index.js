@@ -4,9 +4,7 @@ var app = express()
 var body_parser = require('body-parser')
 
 app.use(body_parser.json())
-var canvasdata
-
-var svgs = []
+var canvasdata = []
 
 // set up routes
 app.get('/serve', function (req, res) {
@@ -18,7 +16,7 @@ app.get('/serve', function (req, res) {
 })
 
 app.post('/save', function (req, res) {
-  canvasdata = req.body
+  canvasdata.push(req.body)
   console.log('canvasdata', canvasdata)
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST')
@@ -29,10 +27,10 @@ app.post('/save', function (req, res) {
 
 })
 
-// app.get('/save/:data', function (req, res) {
-//   canvasdata = req.params.data
-//   res.sendStatus(200)
-// })
+app.get('/save/:data', function (req, res) {
+  canvasdata = req.params.data
+  res.sendStatus(200)
+})
 
 // start the server
 var server = app.listen(process.env.PORT, function () {
