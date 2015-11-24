@@ -17,7 +17,7 @@ app.get('/serve', function (req, res) {
 
 app.post('/save', function (req, res) {
   canvasdata.push(req.body)
-  console.log('canvasdata', canvasdata)
+  console.log('req.body', req.body, 'canvasdata', canvasdata)
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST')
 
