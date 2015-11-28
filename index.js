@@ -24,10 +24,10 @@ app.post('/save', function (req, res) {
   res.sendStatus(200)
 })
 
-app.get('/save/:data', function (req, res) {
-  canvasdata = req.params.data
-  res.sendStatus(200)
-})
+// app.get('/save/:data', function (req, res) {
+//   canvasdata = req.params.data
+//   res.sendStatus(200)
+// })
 
 // start the server
 var server = app.listen(process.env.PORT, function () {
