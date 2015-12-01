@@ -12,26 +12,6 @@ process.env.MONGOHQ_URL ||
 
 var theport = process.env.PORT || 5000;
 
-var userSchema = new mongoose.Schema({
-  name: {
-    first: String,
-    last: { type: String, trim: true }
-  },
-  age: { type: Number, min: 0 }
-});
-
-var PUser = mongoose.model('PowerUsers', userSchema);
-// Creating one user.
-var johndoe = new PUser ({
-  name: { first: 'John', last: '  Doe   ' },
-  age: 25
-});
-
-// Saving it to the database.
-johndoe.save(function (err) {if (err) console.log ('Error on save!')});
-
-// var uri = 'mongodb://jakeelwes:P455w0rd@ds061374.mongolab.com:61374/heroku_csdn2nft'
-
 mongoose.connect(uristring, function (err, res) {
   if (err) {
   console.log ('ERROR connecting to: ' + uristring + '. ' + err);
@@ -40,6 +20,19 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
+var userSchema = new mongoose.Schema({
+    date: String,
+    data: String
+});
+
+var SVGdata = mongoose.model('PowerUsers', userSchema);
+// Creating one user.
+// var johndoe = new PUser ({
+//   name: { first: 'John', last: '  Doe   ' },
+//   age: 25
+// });
+
+// Saving it to the database.
 app.use(body_parser.json())
 var canvasdata = []
 
@@ -56,6 +49,7 @@ app.get('/serve', function (req, res) {
 })
 
 app.post('/save', function (req, res) {
+  req.body.save(function (err) {if (err) console.log ('Error on save!')});
   canvasdata.push(req.body)
   console.log('req.body', req.body, 'canvasdata', canvasdata)
   res.sendStatus(200)
