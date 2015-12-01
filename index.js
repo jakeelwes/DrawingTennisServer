@@ -26,13 +26,7 @@ var userSchema = new mongoose.Schema({
 });
 
 var SVGdata = mongoose.model('PowerUsers', userSchema);
-// Creating one user.
-// var johndoe = new PUser ({
-//   name: { first: 'John', last: '  Doe   ' },
-//   age: 25
-// });
 
-// Saving it to the database.
 app.use(body_parser.json())
 var canvasdata = []
 
@@ -43,16 +37,22 @@ app.use(function (req, res, next) {
   next()
 })
 
-// set up routes
+
+
 app.get('/serve', function (req, res) {
-  res.send(canvasdata)
+
+  SVGdata.find({}, function (err, data){
+    res.send(data);
+  })
+
+  // res.send(canvasdata)
 })
 
 app.post('/save', function (req, res) {
   var svg = new SVGdata(req.body)
   svg.save(function (err) {if (err) console.log ('Error on save!')});
 
-  canvasdata.push(req.body)
+  // canvasdata.push(req.body)
   console.log('req.body', req.body, 'canvasdata', canvasdata)
   res.sendStatus(200)
 })
