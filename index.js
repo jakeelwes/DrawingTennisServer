@@ -49,7 +49,9 @@ app.get('/serve', function (req, res) {
 })
 
 app.post('/save', function (req, res) {
-  req.body.save(function (err) {if (err) console.log ('Error on save!')});
+  var svg = new SVGdata(req.body)
+  svg.save(function (err) {if (err) console.log ('Error on save!')});
+
   canvasdata.push(req.body)
   console.log('req.body', req.body, 'canvasdata', canvasdata)
   res.sendStatus(200)
