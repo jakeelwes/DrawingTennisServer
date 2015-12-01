@@ -8,7 +8,8 @@ var mongoose = require ("mongoose");
 var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://localhost/HelloMongoose';
+'mongodb://jakeelwes:Jkae21@ds061374.mongolab.com:61374/heroku_csdn2nft';
+
 var theport = process.env.PORT || 5000;
 
 var uri = 'mongodb://jakeelwes:Jkae21@ds061374.mongolab.com:61374/heroku_csdn2nft'
@@ -21,8 +22,6 @@ mongoose.connect(uri, function (err, res) {
   console.log ('Succeeded connected to: ' + uristring);
   }
 });
-
-
 
 app.use(body_parser.json())
 var canvasdata = []
