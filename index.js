@@ -11,7 +11,10 @@ process.env.MONGOHQ_URL ||
 'mongodb://localhost/HelloMongoose';
 var theport = process.env.PORT || 5000;
 
-mongoose.connect(uristring, function (err, res) {
+var uri = 'mongodb://jakeelwes:Jkae21@ds061374.mongolab.com:61374/heroku_csdn2nft'
+
+
+mongoose.connect(uri, function (err, res) {
   if (err) {
   console.log ('ERROR connecting to: ' + uristring + '. ' + err);
   } else {
