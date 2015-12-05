@@ -26,7 +26,7 @@ var userSchema = new mongoose.Schema({
     data: String
 });
 
-var SVGdata = mongoose.model('PowerUsers', userSchema);
+var SVGdata = mongoose.model('a', userSchema);
 
 app.use(body_parser.json())
 var canvasdata = []
