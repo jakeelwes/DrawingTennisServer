@@ -26,7 +26,7 @@ var userSchema = new mongoose.Schema({
     data: String
 });
 
-var SVGdata = mongoose.model('a', userSchema);
+var SVGdata = mongoose.model('PowerUsers', userSchema);
 
 app.use(body_parser.json())
 var canvasdata = []
@@ -44,7 +44,7 @@ app.get('/serve', function (req, res) {
 
   SVGdata.find({}, function (err, data){
     res.send(data);
-  })
+  }).sort({"date":1};
 
   // res.send(canvasdata)
 })
