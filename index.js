@@ -3,8 +3,6 @@ var express = require('express')
 var app = express()
 var body_parser = require('body-parser')
 
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 var mongoose = require ("mongoose");
 
@@ -43,6 +41,8 @@ app.use(function (req, res, next) {
   next()
 })
 
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 
 app.get('/serve', function (req, res) {
