@@ -44,7 +44,7 @@ app.get('/serve', function (req, res) {
 
   SVGdata.find({}, function (err, data){
     res.send(data);
-  }).sort({"date":1};
+  });
 
   // res.send(canvasdata)
 })
