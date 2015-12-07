@@ -31,7 +31,7 @@ var userSchema = new mongoose.Schema({
 
 var SVGdata = mongoose.model('PowerUsers', userSchema);
 
-app.use(body_parser.json())
+app.use(body_parser.json({limit: '50mb'}))
 var canvasdata = []
 
 app.use(function (req, res, next) {
@@ -41,8 +41,8 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+// app.use(bodyParser.json({limit: '50mb'}));
+// app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 
 app.get('/serve', function (req, res) {
