@@ -26,7 +26,9 @@ var userSchema = new mongoose.Schema({
     formattedDate: String,
     name: String,
     index: String,
-    data: String
+    data: String,
+    serverDate: String
+
 });
 
 var SVGdata = mongoose.model('PowerUsers', userSchema);
@@ -55,11 +57,15 @@ app.get('/serve', function (req, res) {
 })
 
 app.post('/save', function (req, res) {
-  var svg = new SVGdata(req.body)
+  var body = req.body;
+  body.serverDate = Date.now();
+
+  var svg = new SVGdata(body)
   svg.save(function (err) {if (err) console.log ('Error on save!')});
 
   // canvasdata.push(req.body)
-  console.log('req.body', req.body, 'canvasdata', canvasdata)
+  // res.send(svg + d);
+  console.log('body', body, 'canvasdata', canvasdata)
   res.sendStatus(200)
 })
 
