@@ -22,7 +22,7 @@ mongoose.connect(uristring, function (err, res) {
 });
 
 var userSchema = new mongoose.Schema({
-    date: String,
+    // date: String,
     formattedDate: String,
     name: String,
     index: String,
@@ -58,7 +58,7 @@ app.get('/serve', function (req, res) {
 
 app.post('/save', function (req, res) {
   var body = req.body;
-  body.serverDate = Date.now();
+  body.date = Date.now();
 
   var svg = new SVGdata(body)
   svg.save(function (err) {if (err) console.log ('Error on save!')});
