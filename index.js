@@ -22,12 +22,12 @@ mongoose.connect(uristring, function (err, res) {
 });
 
 var userSchema = new mongoose.Schema({
-    // date: String,
+    date: String,
     formattedDate: String,
     name: String,
     index: String,
     data: String,
-    serverDate: String
+    // serverDate: String
 
 });
 
