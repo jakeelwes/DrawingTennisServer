@@ -21,11 +21,9 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
-var d = Date.now();
-
 var userSchema = new mongoose.Schema({
     date: String,
-    formattedDate: d,
+    formattedDate: String,
     name: String,
     index: String,
     data: String
