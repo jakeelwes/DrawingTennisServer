@@ -31,7 +31,7 @@ var userSchema = new mongoose.Schema({
 
 });
 
-var ips = ['90.200.37.158', '73.50.216.129'];
+var ips = ['90.200.37.158'];
 
 var SVGdata = mongoose.model('PowerUsers', userSchema);
 
