@@ -9,7 +9,7 @@ var mongoose = require ("mongoose");
 var uristring =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://jakeelwes:P455w0rd@ds061374.mongolab.com:61374/heroku_csdn2nft';
+'mongodb://jakeelwes:dp7948769@ds061374.mongolab.com:61374/heroku_csdn2nft';
 
 var theport = process.env.PORT || 5000;
 
