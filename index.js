@@ -2,7 +2,7 @@
 var express = require('express')
 var app = express()
 var body_parser = require('body-parser')
-
+var ipfilter = require('express-ipfilter')
 
 var mongoose = require ("mongoose");
 
@@ -31,9 +31,12 @@ var userSchema = new mongoose.Schema({
 
 });
 
+var ips = ['90.200.37.158', '73.50.216.129'];
+
 var SVGdata = mongoose.model('PowerUsers', userSchema);
 
 app.use(body_parser.json({limit: '50mb'}))
+app.use(ipfilter(ips));
 var canvasdata = []
 
 app.use(function (req, res, next) {
